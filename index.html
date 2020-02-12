@@ -1,32 +1,4 @@
-const colors = {
-  green: {
-    wrapperBackground: "#E6E1C3",
-    headerBackground: "#C1C72C",
-    headerColor: "black",
-    photoBorderColor: "#black"
-  },
-  blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
-    headerColor: "white",
-    photoBorderColor: "#73448C"
-  },
-  pink: {
-    wrapperBackground: "#879CDF",
-    headerBackground: "#FF8374",
-    headerColor: "white",
-    photoBorderColor: "#FEE24C"
-  },
-  red: {
-    wrapperBackground: "#DE9967",
-    headerBackground: "#870603",
-    headerColor: "white",
-    photoBorderColor: "white"
-  }
-};
-
-function generateHTML(user) {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -52,7 +24,7 @@ function generateHTML(user) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors[user.color].wrapperBackground};
+         background-color: #E6E1C3;
          padding-top: 100px;
          }
          body {
@@ -94,8 +66,8 @@ function generateHTML(user) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[user.color].headerBackground};
-         color: ${colors[user.color].headerColor};
+         background-color: #C1C72C;
+         color: black;
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -106,7 +78,7 @@ function generateHTML(user) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[user.color].photoBorderColor};
+         border: 6px solid #black;
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -149,8 +121,8 @@ function generateHTML(user) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[user.color].headerBackground};
-           color: ${colors[user.color].headerColor};
+           background-color: #C1C72C;
+           color: black;
            margin: 20px;
          }
          
@@ -175,29 +147,29 @@ function generateHTML(user) {
             <body>
                 <div class="wrapper">
                     <div class="photo-header">
-                            <img src="${user.avatar}">
+                            <img src="https://avatars2.githubusercontent.com/u/55517499?v=4">
                             <h1>Hi!</h1>
-                            <h2>My name is ${user.name}</h2>
-                            <h3>Currently @ ${user.location}</h3>
+                            <h2>My name is Bobby Oldani</h2>
+                            <h3>Currently @ Bellevue, WA</h3>
                             <div class ="links-nav">
-                                <a class="nav-link" href="https://www.google.com/maps/place/${user.location}"><i class="fas fa-location-arrow"></i>Location</a>
-                                <a class="nav-link" href="${user.githubUrl}"><i class="fab fa-github-alt"></i> GitHub</a>
-                                <a class="nav-link" href="${user.blog}"><i class="fas fa-rss"></i> Blog</a>
+                                <a class="nav-link" href="https://www.google.com/maps/place/Bellevue, WA"><i class="fas fa-location-arrow"></i>Location</a>
+                                <a class="nav-link" href="https://github.com/BobbyOldani"><i class="fab fa-github-alt"></i> GitHub</a>
+                                <a class="nav-link" href="https://bobbyoldani.github.io/Coding-Bootcamp-Portfolio/"><i class="fas fa-rss"></i> Blog</a>
                             </div>
                         </div>
                     </div>
                     <div class="main">
                         <div class="container">
-                            <h3>${user.bio}</h3>
+                            <h3>Diving head first into the world of web development, I look forward to what the future brings. I am eagerly looking to collaborate and expand my knowledge.</h3>
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        Public Repositories: ${user.repos}
+                                        Public Repositories: 10
                                     </div>  
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        Followers: ${user.followers}
+                                        Followers: 9
                                     </div>
                                 </div>
                             </div>
@@ -209,7 +181,7 @@ function generateHTML(user) {
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        Following: ${user.following}
+                                        Following: 11
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +189,4 @@ function generateHTML(user) {
                     </div>
                 </div>
             </body>
-        </html>`
-        }
-
-module.exports = generateHTML
+        </html>
