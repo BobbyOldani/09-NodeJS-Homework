@@ -175,15 +175,14 @@ function generateHTML(user) {
             <body>
                 <div class="wrapper">
                     <div class="photo-header">
-                            <img src="${user.avatar}">
-                            <h1>Hi!</h1>
-                            <h2>My name is ${user.name}</h2>
-                            <h3>Currently @ ${user.location}</h3>
-                            <div class ="links-nav">
-                                <a class="nav-link" href="https://www.google.com/maps/place/${user.location}"><i class="fas fa-location-arrow"></i>Location</a>
-                                <a class="nav-link" href="${user.githubUrl}"><i class="fab fa-github-alt"></i> GitHub</a>
-                                <a class="nav-link" href="${user.blog}"><i class="fas fa-rss"></i> Blog</a>
-                            </div>
+                        <img src="${user.avatar}">
+                        <h1>Hi!</h1>
+                        <h2>My name is ${user.name}</h2>
+                        <h3>Currently @ ${user.company}</h3>
+                        <div class ="links-nav">
+                            <a class="nav-link" href="https://www.google.com/maps/place/${user.location}"><i class="fas fa-location-arrow"></i>Location</a>
+                            <a class="nav-link" href="${user.githubUrl}"><i class="fab fa-github-alt"></i> GitHub</a>
+                            <a class="nav-link" href="${user.blog}"><i class="fas fa-rss"></i> Blog</a>
                         </div>
                     </div>
                     <div class="main">
@@ -204,7 +203,7 @@ function generateHTML(user) {
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        GitHub Stars: 
+                                        GitHub Stars: ${user.stars} 
                                     </div>
                                 </div>
                                 <div class="col">
