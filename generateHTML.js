@@ -100,6 +100,7 @@ function generateHTML(user) {
         padding: 10px;
         width: 95%;
         border-radius: 6px;
+        text-align: center;
         }
         .photo-header img {
         width: 250px;
