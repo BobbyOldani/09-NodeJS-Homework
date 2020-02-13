@@ -3,9 +3,7 @@ const axios = require("axios");
 const inquirer = require("inquirer");
 const generateHTML = require("./generateHTML");
 const pdfDocument = require("html-pdf");
-// require("dotenv").config();
-let color
-
+let color;
 const questions = [
     {
         type: 'input',
@@ -67,20 +65,32 @@ inquirer
             fs.writeFile("index.html", userReturn, function(err){
                 if(err) throw err;
                 console.log("WOHOOO!")
+                return writeToFile("index.html", userReturn);
             })
-        
         })
-        .then (function() {
-            let html = fs.readFileSync('index.html', 'utf8');
-            let options = { format: 'Letter'}
-            pdfDocument.create(html, options).toFile('./page.pdf', function(err, res) {
-              if (err) return console.log(err);  
-              console.log("html to pdf")
-            })
+        .catch (function(err) {
+            console.log(err);
+        })
+        // .then (function() {
+        //     let html = fs.readFileSync('index.html', 'utf8');
+        //     let options = { format: 'Letter'}
+        //     pdfDocument.create(html, options).toFile('./page.pdf', function(err, res) {
+        //       if (err) return console.log(err);  
+        //       console.log("html to pdf")
+        //     })
 
-        })
+        // })
     })
 };
+
+function writeToFile(filename, data) {
+    let html = fs.readFileSync('index.html', 'utf8');
+    let options = { format: 'Letter', orientation:'portrait'}
+    pdfDocument.create(html, options).toFile('./page.pdf', function(err, res) {
+        if (err) return console.log(err);  
+        console.log("html to pdf")
+    })
+}
 
 
  init();
